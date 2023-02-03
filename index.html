@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>kalkulator</title>
+        <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+        <style type="text/css">
+            body {
+                background: gray;
+            }
+            .container h2 {
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+           <center><h2>Berat Badan Ideal</h2></center>
+            <div class="card">
+                <div class="card-header">
+                    <h3>Menghitung Program BMI</h3>
+                </div>
+                <div class="card-body">
+                     <div class="form-group">
+                         <label>Tinggi Badan (cm)</label>
+                         <input type="number" name="ipt_t" id="ipt_t" class="form-control" required="" placeholder="Masukkan Tinggi Badan">
+                     </div>
+                    <div class="form-group">
+                        <label>Berat Badan (cm)</label>
+                        <input type="number" name="ipt_b" id="ipt_b" class="form-control" required="" placeholder="Masukkan Berat Badan">
+                    </div>
+                    <div class="form-group">
+                        <button onclick="hitung()" class="btn btn-primary">Hitung</button>
+                    </div>
+                        <h4 id="bmi"></h4>
+                        <h5 id="keterangan"></h5>
+               </div>
+                <div class="card-footer">
+                    <p>Oleh Firna Maftukhah</p>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            var tinggi, berat, keterangan, bmi;
+            function hitung() {
+                tinggi = parseFloat(document.getElementById("ipt_t").value);
+                tinggi /= 100;
+                tinggi = parseFloat(document.getElementById("ipt_b").value);
+                bmi = berat / (tinggi = tinggi);
+                if(bmi > 27) {
+                    keterangan = "Gemuk, kelebihan berat badan tingkat berat cuyy";
+                }else if ((bmi >= 25.1) & (bmi <= 27)) {
+                    keterangan = "Gemul, kelebihan berat badan tingkat berat cuyy";
+                }else if ((bmi >= 18.5) & (bmi <= 25)) {
+                    keterangan = "Normal";
+                }else if ((bmi >= 17) & (bmi <= 18.4)) {
+                    keterangan = "kurus, kekurangan berat badan tingkat rendah cuyy";
+                }else {
+                    keterangan = "kurus, kekurangan berat badan tingkat berat cuyy";
+                }
+                document.getElementById('bmi').innerHTML = "Hasil Perhitungan BMI : " + bmi.toFixed(1);
+                document.getElementById('keterangan').innerHTML = "keterangan : " + keterangan;
+            }
+        </script>
+        </div>
+    </body>
+</html>

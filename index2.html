@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>hitung</title>
+    </head>
+    <body>
+        <h1>Menghitung Luas Persegi Panjang</h1>
+        <input type="number" id="panjang" placeholder="panjang"><br>
+        <input type="number" id="lebar" placeholder="lebar"><br>
+        <button onclick="pp()">Hitung</button>
+            <hr>
+            <h5 id="hasil"></h5>
+    <script>
+        function pp() {
+            let panjang = document.getElementById("panjang").value;
+            let lebar = document.getElementById("lebar").value;
+            let luas = panjang*lebar;
+            let hasil = document.getElementById("hasil");
+            hasil.innerHTML= "Hasil perhitungan luas persegi panjang = " + luas;
+        }
+    </script>
+    </body>
+</html>
